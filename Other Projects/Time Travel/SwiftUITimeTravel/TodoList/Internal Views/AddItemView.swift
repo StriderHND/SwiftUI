@@ -6,12 +6,12 @@ struct AddItemView: View {
     
     var body: some View {
         
-        let textBinding = Binding<String>(
-            getValue: { self.store.state.partialItemName },
-            setValue: { self.store.dispatch(event: .changePartialItemName($0)) })
+        let textBinding = Binding(
+            get: { self.store.state.partialItemName },
+            set: { self.store.dispatch(event: .changePartialItemName($0)) })
         
         return VStack(spacing: 16) {
-            TextField(textBinding, placeholder: Text("Title"))
+            TextField("Title", text: textBinding)
             Button(action: {
                 self.store.dispatch(event: .addItem)
             }) {
@@ -22,7 +22,7 @@ struct AddItemView: View {
                 }
 
                 }
-                .relativeWidth(1.0)
+//                .relativeWidth(1.0)
                 .background(Color.accentColor)
                 .disabled(store.state.partialItemName.isEmpty)
                 .foregroundColor(.white)

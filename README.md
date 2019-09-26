@@ -51,6 +51,7 @@ and follow me on GitHub:
 - [SwiftUI Currency App](#SwiftUI-Currency)
 - [SwiftUI Weather App](#SwiftUI-Weather)
 - [DesignCode SwiftUI App](https://github.com/mythxn/DesignCode)
+- [SwiftUI SlideToOpen](#MTSlideToOpen-SwiftUI)
 
 Also include:
 - Movie
@@ -220,8 +221,12 @@ For change state using `@State` as property:
 ### DesignCode SwiftUI
 [Source](https://github.com/mythxn/DesignCode/tree/master)
 
-<img src="https://i.imgur.com/N9HfWdD.png" width="650">
+<img src="https://github.com/mythxn/DesignCode-SwiftUI/blob/master/preview.gif" height=450><img src="https://i.imgur.com/N9HfWdD.png" height=450>
 
+### MTSlideToOpen-SwiftUI
+[Source](https://github.com/lemanhtien/MTSlideToOpen-SwiftUI)
+
+<a href="url"><img src="https://raw.githubusercontent.com/lemanhtien/MTSlideToOpen-SwiftUI/master/example.gif" align="center" height="500" ></a>
 
 ### Authors
 

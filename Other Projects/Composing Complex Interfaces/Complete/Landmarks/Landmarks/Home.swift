@@ -8,6 +8,8 @@ A view showing featured landmarks above a list of all of the landmarks.
 import SwiftUI
 
 struct CategoryHome: View {
+    @State private var isProfilePresented = false
+
     var categories: [String: [Landmark]] {
         .init(
             grouping: landmarkData,
@@ -28,7 +30,7 @@ struct CategoryHome: View {
                     .clipped()
                     .listRowInsets(EdgeInsets())
                 
-                ForEach(categories.keys.sorted().identified(by: \.self)) { key in
+                ForEach(categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, items: self.categories[key]!)
                 }
                 .listRowInsets(EdgeInsets())
@@ -39,13 +41,16 @@ struct CategoryHome: View {
             }
             .navigationBarTitle(Text("Featured"))
             .navigationBarItems(trailing:
-                PresentationLink(destination: Text("User Profile")) {
+                Button(action: {
+                    self.isProfilePresented = true
+                }) {
                     Image(systemName: "person.crop.circle")
                         .imageScale(.large)
                         .accessibility(label: Text("User Profile"))
                         .padding()
                 }
-            )
+            ).sheet(isPresented: $isProfilePresented,
+                    content: { Text("User Profile") })
         }
     }
 }

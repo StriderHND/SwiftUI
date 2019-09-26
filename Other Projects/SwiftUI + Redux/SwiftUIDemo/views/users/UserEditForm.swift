@@ -24,13 +24,13 @@
         return NavigationView {
             VStack(alignment: .leading, spacing: 10) {
                 Text("User name")
-                TextField($newUserName, placeholder: Text("New name"))
-                    .textFieldStyle(.roundedBorder)
+                TextField("New name", text: $newUserName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 Divider()
                 Text("Username")
-                TextField($newUserUsername, placeholder: Text("New username"))
-                    .textFieldStyle(.roundedBorder)
-                }.padding(16)
+                TextField("New username", text: $newUserUsername)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }.padding(16)
             Button(action: save) {
                 Text("Save")
                     .padding(8)
@@ -42,7 +42,7 @@
                     Text("Close")
                 })
                 .navigationBarTitle(Text("Edit \(user.name)"), displayMode: .inline)
-            
+
             Badge(text: "Saved successfully", color: .green, show: $showSaved)
             Badge(text: "Missing username or name", color: .red, show: $showError)
         }

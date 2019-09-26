@@ -1,24 +1,12 @@
 import SwiftUI
 import Combine
 
-final class SearchUserViewModel: BindableObject {
-    var didChange = PassthroughSubject<SearchUserViewModel, Never>()
+final class SearchUserViewModel: ObservableObject {
+    @Published private(set) var users = [User]()
 
-    private(set) var users = [User]() {
-        didSet {
-            didChange.send(self)
-        }
-    }
+    @Published private(set) var userImages = [User: UIImage]()
 
-    private(set) var userImages = [User: UIImage]() {
-        didSet {
-            didChange.send(self)
-        }
-    }
-
-    private var cancellable: Cancellable? {
-        didSet { oldValue?.cancel() }
-    }
+    @Published private var cancellable: Cancellable?
 
     func search(name: String) {
         guard !name.isEmpty else {
@@ -54,7 +42,7 @@ final class SearchUserViewModel: BindableObject {
             .replaceError(with: nil)
             .eraseToAnyPublisher()
             .receive(on: DispatchQueue.main)
-            .receive(subscriber: Subscribers.Sink<UIImage?, Never> { [weak self] image in
+            .receive(subscriber: Subscribers.Sink<UIImage?, Never>(receiveCompletion: {_ in}) { [weak self] image in
                 self?.userImages[user] = image
             })
     }

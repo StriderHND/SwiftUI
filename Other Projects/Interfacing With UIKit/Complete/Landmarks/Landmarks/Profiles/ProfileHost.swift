@@ -15,10 +15,10 @@ struct ProfileHost: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                if self.mode?.value == .active {
+                if self.mode?.wrappedValue == .active {
                     Button(action: {
-                        self.profile = self.draftProfile
-                        self.mode?.animation().value = .inactive
+                        self.draftProfile = self.profile
+                        self.mode?.animation().wrappedValue = .inactive
                     }) {
                         Text("Done")
                     }
@@ -28,12 +28,12 @@ struct ProfileHost: View {
                 
                 EditButton()
             }
-            if self.mode?.value == .inactive {
+            if self.mode?.wrappedValue == .inactive {
                 ProfileSummary(profile: profile)
             } else {
                 ProfileEditor(profile: $draftProfile)
                     .onDisappear {
-                        self.draftProfile = self.profile
+                        self.profile = self.draftProfile
                     }
             }
         }

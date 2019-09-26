@@ -13,6 +13,7 @@ struct VideoRow : View {
     @EnvironmentObject var userData: UserData
     
     var video: Video
+    var isFavorite = false
     
     var body: some View {
         HStack {
@@ -32,13 +33,13 @@ struct VideoRow : View {
                 
                 Image(systemName: video.isFavorite ? "star.fill" : "star")
                     .foregroundColor(video.isFavorite ? Color.yellow : Color.gray)
-                    .tapAction {
+                    .onTapGesture {
                         self.setFavorite(video: self.video)
                     }
             }
         }
         .padding([.top, .bottom], 10)
-        .tapAction {
+        .onTapGesture {
             self.setCurrentVideo(video: self.video)
         }
     }
@@ -71,7 +72,7 @@ struct TitleText: View {
     let text: String
     var body: some View {
         return Text(text)
-            .color(.primary)
+            .foregroundColor(.primary)
             .bold()
     }
 }
@@ -81,6 +82,6 @@ struct DescriptionText : View {
     var body: some View {
         return Text(text)
             .font(.footnote).fontWeight(.semibold)
-            .color(.secondary)
+            .foregroundColor(.secondary)
     }
 }

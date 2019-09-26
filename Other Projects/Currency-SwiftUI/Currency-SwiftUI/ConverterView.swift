@@ -34,37 +34,37 @@ struct ConverterView : View {
     
     var body: some View {
         let inset = EdgeInsets(top: -8, leading: -20, bottom: -7, trailing: 5)
-        let doubleValue: Double = Double(self.$baseAmount.value) ?? 1.0
+        let doubleValue: Double = Double(self.$baseAmount.wrappedValue) ?? 1.0
         
         return ZStack(alignment: Alignment.bottomTrailing) {
             NavigationView {
             VStack(alignment: .leading){
-                Text("From:").bold().color(.gray)
+                Text("From:").bold().foregroundColor(.gray)
                 HStack{
                     // Flag
                     Text("\(userData.baseCurrency.flag)").padding(5)
                     // Code and name
                     VStack(alignment: .leading){
-                        Text(userData.baseCurrency.code).color(.white)
-                        Text(userData.baseCurrency.name).color(.white)
+                        Text(userData.baseCurrency.code).foregroundColor(.white)
+                        Text(userData.baseCurrency.name).foregroundColor(.white)
                     }
                     Spacer()
                     // Amount and conversion
-                    TextField($baseAmount, placeholder: Text("1.0"), onCommit: {
+                    TextField("1.0", text: $baseAmount, onCommit: {
                         // TODO: update all currencies on the following list
                     }).foregroundColor(.white)
                         .background(
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(Color.clear)
-                                .border(Color(red: 0.7, green: 0.7, blue: 0.7), width: 1 / UIScreen.main.scale, cornerRadius: 5)
+                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(red: 0.7, green: 0.7, blue: 0.7), lineWidth: 1 / UIScreen.main.scale))
                                 .padding(inset)
                         )
                 }.background(Color.blue).cornerRadius(5)
-                Text("To:").bold().color(.gray)
+                Text("To:").bold().foregroundColor(.gray)
                 List {
                     // TODO: should filter out BaseCurrency from list
                     ForEach(userData.userCurrency) { currency in
-                        	CurrencyItemView(currency: currency, baseAmount: doubleValue, isEditing: self.$isEditing).tapAction {
+                        CurrencyItemView(currency: currency, baseAmount: doubleValue, isEditing: self.$isEditing).onTapGesture {
                             	// Swap this and base
                             	self.userData.baseCurrency = currency
                         	}
@@ -79,7 +79,8 @@ struct ConverterView : View {
                         }
                     })
                 HStack {
-                Text("Last updated: \(self.lastUpdated)").color(.gray).bold()
+                    Text("Last updated: \(self.lastUpdated)")
+                        .foregroundColor(.gray).bold()
                 Spacer()
 
             NavigationLink(destination: AddCurrencyView().environmentObject(self.userData)) {
@@ -88,7 +89,7 @@ struct ConverterView : View {
                 .background(
                     RoundedRectangle(cornerRadius: 23)
                         .fill(Color.blue)
-                        .border(Color(red: 0.7, green: 0.7, blue: 0.7), width: 1 / UIScreen.main.scale, cornerRadius: 23))
+                        .background(RoundedRectangle(cornerRadius: 23).strokeBorder(Color(red: 0.7, green: 0.7, blue: 0.7), lineWidth: 1 / UIScreen.main.scale)))
                 .foregroundColor(.white).font(.largeTitle)
         }.padding()
                 }
