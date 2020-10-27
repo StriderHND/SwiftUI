@@ -10,12 +10,12 @@ Include Layout, UI, Animations, Gestures, Draw and Data. See projects files in `
 Interested in UI and animations in `UIKit`?  
 See [awesome-ios-ui](https://github.com/ivanvorobei/awesome-ios-ui) pack with UI elements:
 
-[![awesome-ios-ui](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Awesome%20iOS%20UI%20-%201.svg)](https://github.com/ivanvorobei/awesome-ios-ui)
+[![awesome-ios-ui](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/awesome-ios-ui.svg)](https://github.com/ivanvorobei/awesome-ios-ui)
 
 If you like the project, do not forget to `put star ★`  
 and follow me on GitHub:
 
-[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermission/blob/master/Resources/Buttons/Follow%20me%20-%2016.svg)](https://github.com/ivanvorobei)
+[![https://github.com/ivanvorobei](https://github.com/ivanvorobei/SPPermissions/blob/master/Assets/Buttons/follow-me-on-github.svg)](https://github.com/ivanvorobei)
 
 ## Navigate
 
@@ -24,6 +24,7 @@ and follow me on GitHub:
 
 #### Other projects
 
+- [Calculator Clone for iPadOS](https://github.com/bofeiw/ios-calculator-clone-for-ipados)
 - [Transition And Blur](#transition-and-blur)
 - [2048 Game](#2048-game)
 - [SFSymbols](#sfsymbols)
@@ -52,6 +53,12 @@ and follow me on GitHub:
 - [SwiftUI Weather App](#SwiftUI-Weather)
 - [DesignCode SwiftUI App](https://github.com/mythxn/DesignCode)
 - [SwiftUI SlideToOpen](#MTSlideToOpen-SwiftUI)
+- [FlipClock-SwiftUI](#FlipClock-SwiftUI)
+- [Currency Converter & Calculator](#transition-and-blur)
+- [Countdown Film Clutter](#CountdownFilmClutter-SwiftUI)
+- [SpotlightSearch](#SpotlightSearch)
+- [Growing text view in SwiftUI](#Growing-text-view-in-SwiftUI)
+- [MGFlipView](#MGFlipView)
 
 Also include:
 - Movie
@@ -175,6 +182,12 @@ For change state using `@State` as property:
 
 <img src="Resources/GitHubSearch.png" width="270">
 
+### SwiftUI Weather App with MVVM and CoreML
+
+[Source](https://github.com/necatievrenyasar/SwiftUI-WeatherApp)
+
+<img src="https://user-images.githubusercontent.com/1447937/72296817-96f10580-366b-11ea-957c-023efeac958f.png" width="300">
+
 ### Time Travel
 
 <img src="Resources/TimeTravel.gif" width="250">
@@ -204,6 +217,8 @@ For change state using `@State` as property:
 
 ### SwiftUI SideMenu
 
+[Source](https://github.com/Vidhyadharan24/SideMenu)
+
 <img src="Resources/SwiftUISideMenu.gif" width="300">
 
 ### SwiftUI Currency
@@ -227,6 +242,42 @@ For change state using `@State` as property:
 [Source](https://github.com/lemanhtien/MTSlideToOpen-SwiftUI)
 
 <a href="url"><img src="https://raw.githubusercontent.com/lemanhtien/MTSlideToOpen-SwiftUI/master/example.gif" align="center" height="500" ></a>
+
+### FlipClock-SwiftUI
+[Source](https://github.com/elpassion/FlipClock-SwiftUI)
+
+|Light|Dark|
+|:-:|:-:|
+|<img src="https://github.com/elpassion/FlipClock-SwiftUI/blob/master/Gifs/flip_clock_light.gif" width="260">|<img src="https://github.com/elpassion/FlipClock-SwiftUI/blob/master/Gifs/flip_clock_dark.gif" width="260">|
+
+### Currency Converter & Calculator
+
+[Source](https://github.com/CurrencyConverterCalculator/iosCCC)
+
+<img src="https://github.com/CurrencyConverterCalculator/iosCCC/blob/master/iosCCC.gif" width="360px"/>
+
+### CountdownFilmClutter-SwiftUI
+
+[Source](https://github.com/elpassion/CountdownFilmClutter-SwiftUI)
+
+<img src="https://github.com/elpassion/CountdownFilmClutter-SwiftUI/blob/master/Gifs/countdown_film_clutter.gif">
+
+### SpotlightSearch
+[Source](https://github.com/boraseoksoon/SpotlightSearch)
+
+|Light|Dark|
+|:-:|:-:|
+|<img src="https://github.com/boraseoksoon/SpotlightSearch/blob/master/gif/white_theme.gif" width="260">|<img src="https://github.com/boraseoksoon/SpotlightSearch/blob/master/gif/dark_theme.gif" width="260">|
+
+### Growing text view in SwiftUI
+[Source](https://github.com/Zaprogramiacz/GrowingTextView)
+
+<img src="https://github.com/Zaprogramiacz/GrowingTextView/blob/master/Resources/growing_text_view.gif">
+
+### MGFlipView
+[Source](https://github.com/Zaprogramiacz/MGFlipView)
+
+<img src="https://github.com/Zaprogramiacz/MGFlipView/blob/master/Examples/flip_view_example.gif">
 
 ### Authors
 
